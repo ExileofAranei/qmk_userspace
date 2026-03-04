@@ -54,25 +54,20 @@
 // Mouse key settings - keyboards can override in their config.h
 // We only define these if the keyboard hasn't already defined them
 
-#ifndef MOUSEKEY_DELAY
+#undef MOUSEKEY_DELAY
 #define MOUSEKEY_DELAY          0   // No delay before movement starts
-#endif
 
-#ifndef MOUSEKEY_INTERVAL
-#define MOUSEKEY_INTERVAL       16  // Time between movements (ms)
-#endif
+#undef MOUSEKEY_INTERVAL
+#define MOUSEKEY_INTERVAL       8   // Time between movements (ms)
 
-#ifndef MOUSEKEY_WHEEL_DELAY
+#undef MOUSEKEY_WHEEL_DELAY
 #define MOUSEKEY_WHEEL_DELAY    0   // No delay for scrolling
-#endif
 
-#ifndef MOUSEKEY_MAX_SPEED
+#undef MOUSEKEY_MAX_SPEED
 #define MOUSEKEY_MAX_SPEED      6   // Maximum cursor speed
-#endif
 
-#ifndef MOUSEKEY_TIME_TO_MAX
+#undef MOUSEKEY_TIME_TO_MAX
 #define MOUSEKEY_TIME_TO_MAX    64  // Time to reach max speed (ms)
-#endif
 
 // ============================================================================
 // Combo Settings
