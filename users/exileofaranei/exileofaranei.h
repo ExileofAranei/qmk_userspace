@@ -1,10 +1,10 @@
 /**
  * ExileofAranei QMK User Configuration
  * =====================================
- * 
+ *
  * This file defines all layers, custom keycodes, and helper macros
  * that are shared across ALL keyboards in this userspace.
- * 
+ *
  * HOW TO ADD A NEW KEYBOARD:
  * 1. Create folder: keyboards/<name>/keymaps/exileofaranei/
  * 2. Create config.h with: #define EXILE_OLED_ENABLE (if keyboard has OLED)
@@ -19,10 +19,10 @@
 // ============================================================================
 // Layer Definitions
 // ============================================================================
-// 
+//
 // We use an enum to assign numbers to each layer automatically.
 // BASE = 0, EXTRA = 1, TAP = 2, etc.
-// 
+//
 // These layer names match Miryoku naming convention.
 
 enum layers {
@@ -42,7 +42,7 @@ enum layers {
 // ============================================================================
 // Custom Keycodes
 // ============================================================================
-// 
+//
 // These are special keys that do more than just type a character.
 // They are handled in process_record_user() in exileofaranei.c
 
@@ -54,14 +54,14 @@ enum custom_keycodes {
 // ============================================================================
 // Tap Dance Enums
 // ============================================================================
-// 
+//
 // Tap dance allows different actions for single-tap vs double-tap.
 // For example: tap '$' once to type '$', twice to switch to TAP layer.
 
 enum tap_dances {
     TD_BOOT,      // Double-tap to reset keyboard
     TD_SYM_IDX,   // { on tap, BASE layer on double-tap
-    TD_SYM_MID,   // } on tap, EXTRA layer on double-tap  
+    TD_SYM_MID,   // } on tap, EXTRA layer on double-tap
     TD_SYM_RING,  // $ on tap, TAP layer on double-tap
     TD_SYM_PINKY, // \ on tap, reset on double-tap
     TD_SHIFT,     // Custom shift: single = one-shot, double = lock
@@ -77,14 +77,14 @@ extern bool shift_locked;
 // ============================================================================
 // Helper Macros
 // ============================================================================
-// 
+//
 // These make the keymap definitions cleaner and easier to read.
 
 // U_NP = Key is Not Present (used for padding in matrix positions)
 // U_NA = Key is present but Not Available for use
 // U_NU = Key is available but Not Used
 #define U_NP KC_NO
-#define U_NA KC_NO  
+#define U_NA KC_NO
 #define U_NU KC_NO
 
 // Clipboard shortcuts - using Windows/Linux defaults
@@ -98,10 +98,10 @@ extern bool shift_locked;
 // ============================================================================
 // Layer Mapping Macro
 // ============================================================================
-// 
+//
 // This macro maps the 36-key Miryoku layout to a specific keyboard matrix.
 // Each keyboard defines how to place these 36 keys in its physical layout.
-// 
+//
 // The numbers represent positions:
 //   00 01 02 03 04     05 06 07 08 09    <- Top row (10 keys)
 //   10 11 12 13 14     15 16 17 18 19    <- Home row (10 keys)
@@ -111,7 +111,7 @@ extern bool shift_locked;
 // ============================================================================
 // Layer Mapping Macro
 // ============================================================================
-// 
+//
 // This macro maps the 36-key Miryoku layout to a specific keyboard matrix.
 // Each keyboard MUST define this macro in its config.h BEFORE including
 // exileofaranei.h. The macro should expand to the keyboard's LAYOUT macro.
@@ -128,7 +128,7 @@ extern bool shift_locked;
 // ============================================================================
 // Layer Definitions
 // ============================================================================
-// 
+//
 // Each layer is defined as a 4x10 grid (36 keys total).
 // These use home row mods: GUI/ALT/CTL/SHIFT on the home positions.
 
@@ -187,10 +187,10 @@ extern bool shift_locked;
 // SYM Layer: Symbols
 // Brackets, operators, special characters
 #define EXILE_LAYER_SYM \
-    KC_GRV,            KC_LABK,           KC_RABK,           KC_MINS,           KC_PIPE,           KC_CIRC,           TD(TD_SYM_IDX),    TD(TD_SYM_MID),    TD(TD_SYM_RING),   TD(TD_SYM_PINKY),    \
+    KC_GRV,            KC_LABK,           KC_RABK,           KC_MINS,           KC_PIPE,           KC_CIRC,           KC_LCBR,           KC_RCBR,           KC_DLR,            KC_BSLS,             \
     KC_EXLM,           KC_ASTR,           KC_SLSH,           KC_EQL,            KC_AMPR,           KC_HASH,           KC_LPRN,           KC_RPRN,           KC_SCLN,           KC_DQUO,             \
     KC_TILD,           KC_PLUS,           KC_LBRC,           KC_RBRC,           KC_PERC,           KC_AT,             KC_COLN,           KC_COMM,           KC_DOT,            KC_QUOT,             \
-    U_NP,              U_NP,              KC_LPRN,           KC_RPRN,           KC_UNDS,           U_NA,              U_NA,              U_NA,              U_NP,              U_NP
+    U_NP,              U_NP,              U_NP,              KC_SPC,            KC_UNDS,           U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
 // FUN Layer: Function keys
 // F1-F12 in easy-to-reach positions
@@ -228,9 +228,9 @@ extern bool shift_locked;
 // ============================================================================
 // Layer Mapping for Specific Keyboards
 // ============================================================================
-// 
+//
 // These macros define how each layer is mapped to a keyboard's physical layout.
-// 
+//
 // The EXILE_EXPAND macro forces the preprocessor to expand the layer content
 // BEFORE passing it to EXILE_MAPPING. This is necessary because macros with
 // backslash continuation (like EXILE_LAYER_BASE) need to be fully expanded.

@@ -77,7 +77,7 @@
 // Example: Press Z+X together → Undo (Ctrl+Z)
 
 // Time window for combos (ms) - keys must be pressed within this time
-#define COMBO_TERM 50
+#define COMBO_TERM 40
 
 // Number of combos defined (must match the number in exileofaranei.c)
 #define COMBO_COUNT 6
